@@ -1,96 +1,53 @@
-<!-- Setup (side rant, I hate html comments) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="assets/stars.png" type="image/png">
-  <title>Home | Evan Mullins</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Custom Styles -->
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .slide-bg {
-    background-size: 200% 200%;
-    transition: background-position 0.5s ease;
-  }
-  .slide-bg:hover {
-    background-position: right center;
-  }
-
-  .fade-in {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeIn 0.6s ease forwards;
-  }
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-</style>
-
+  <meta name="description" content="Engineering portfolio of Evan Mullins.">
+  <link rel="icon" href="assets/stars.png" type="image/png">
+  <title>Evan Mullins — Engineering Portfolio</title>
+  <link rel="stylesheet" href="assets/site.css">
 </head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Evan Mullins home">EM<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="pages/projects/projects.html">Work</a>
+      <a href="pages/resume/resume.html">Resume</a>
+      <a href="mailto:evangmullins@gmail.com">Contact</a>
+    </nav>
+  </header>
 
-<body id="top" class="bg-slate-950 text-gray-200 font-sans">
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Engineering portfolio · 2026</p>
+      <h1>Ideas become useful<br><em>when they get built.</em></h1>
+      <div class="hero-bottom">
+        <p>I’m Evan Mullins, an engineering student interested in thoughtful systems, hands-on prototyping, and building technology that helps people.</p>
+        <a class="button" href="pages/projects/projects.html">Explore selected work <span>↗</span></a>
+      </div>
+    </section>
 
-<!-- Top Bar -->
-<nav class="bg-gradient-to-l from-slate-900 via-indigo-950 to-violet-950 shadow-sm sticky top-0 z-10 fade-in">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="font-semibold text-lg">
-    <a href="index.html" 
-      class="inline-flex items-center gap-2 transition-transform duration-200 hover:scale-105 hover:text-indigo-400">
+    <section class="feature-grid" aria-label="Portfolio areas">
+      <article class="feature-card feature-card--dark">
+        <p class="eyebrow">01 — Design & build</p>
+        <h2>From a quick sketch to a tested prototype.</h2>
+        <p>I enjoy bringing structure to messy problems through iteration, analysis, and clear communication.</p>
+      </article>
+      <article class="feature-card feature-card--image">
+        <img src="assets/engassets/cup/spill.png" alt="Flux Cup prototype spilling liquid">
+      </article>
+      <article class="feature-card feature-card--warm">
+        <p class="eyebrow">Currently</p>
+        <h2>Studying engineering at the University of Florida.</h2>
+        <a class="text-link" href="pages/projects/projects.html">View all projects <span>→</span></a>
+      </article>
+    </section>
+  </main>
 
-      <img src="assets/purpledragonVIKING.gif" 
-          alt="Logo" 
-          class="h-16 w-16 rounded-full border-2 border-violet-400">
-
-      Home
-    </a>
-  </h1>
-    <div class="space-x-6 text-sm">
-      <a href="pages/about/about.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        About Me
-      </a>
-      <a href="pages/projects/projects.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Projects
-      </a>
-      <a href="pages/resume/resume.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Resume
-      </a>  
-      </a>
-      <a href="pages/contact/contact.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
-
-<!-- Header -->
-<header class="max-w-5xl mx-auto px-6 py-16">
-  <h2 class="text-3xl font-bold mb-4 fade-in" style="animation-delay: 0.1s;">
-    Welcome!
-  </h2>
-  <p class="text-gray-300 max-w-2xl fade-in" style="animation-delay: 0.2s;">
-    Under Construction - Check back soon for updates!
-  </p>
-</header>
-
-<!-- TODO -->
-<!-- add more information, timeline view, images, etc-->
-
-<footer class="max-w-5xl mx-auto px-6 py-12 text-sm text-gray-500 fade-in" style="animation-delay: 0.4s;">
-  <p>Email: evangmullins@gmail.com</p>
-</footer>
-
+  <footer class="site-footer">
+    <p>© 2026 Evan Mullins</p>
+    <a href="mailto:evangmullins@gmail.com">evangmullins@gmail.com</a>
+  </footer>
 </body>
 </html>

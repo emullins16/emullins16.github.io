@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../assets/stars.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <title>Project — Evan Mullins</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="../../index.html" aria-label="Evan Mullins home">EM<span>.</span></a>
+    <nav aria-label="Primary navigation"><a class="active" href="projects.html">Work</a><a href="../resume/resume.html">Resume</a><a href="mailto:evangmullins@gmail.com">Contact</a></nav>
+  </header>
+  <main id="project" class="case-study" aria-live="polite"></main>
+  <footer class="site-footer"><p>© 2026 Evan Mullins</p><a href="mailto:evangmullins@gmail.com">evangmullins@gmail.com</a></footer>
+  <script>
+    async function loadProject() {
+      const container = document.getElementById('project');
+      const id = new URLSearchParams(window.location.search).get('project');
+      try {
+        const response = await fetch('projects.json');
+        const projects = await response.json();
+        const p = projects.find(project => project.id === id);
+        if (!p) throw new Error('Not found');
+        document.title = `${p.title} — Evan Mullins`;
+        container.innerHTML = `
+          <a class="back-link" href="projects.html">← All work</a>
+          <section class="case-hero"><p class="eyebrow">${p.type} · ${p.dateDisplay}</p><h1>${p.title}</h1><p>${p.description}</p><div class="tag-list">${p.tags.map(tag => `<span>${tag}</span>`).join('')}</div></section>
+          <img class="case-hero-image" src="${p.heroImage}" alt="${p.title} project image">
+          <section class="case-details"><div><p class="eyebrow">Overview</p><h2>${p.overview}</h2></div><dl><div><dt>My role</dt><dd>${p.role}</dd></div><div><dt>Outcome</dt><dd>${p.outcome}</dd></div></dl></section>
+          <section class="case-highlights"><p class="eyebrow">Key notes</p><ol>${p.highlights.map(item => `<li>${item}</li>`).join('')}</ol></section>
+          <section class="gallery"><p class="eyebrow">Process</p><div>${p.gallery.map((image, index) => `<img src="${image}" alt="${p.title} process image ${index + 1}" loading="lazy">`).join('')}</div></section>`;
+      } catch (error) {
+        container.innerHTML = '<section class="not-found"><p class="eyebrow">Project not found</p><h1>That project isn’t here yet.</h1><a class="button" href="projects.html">Back to work</a></section>';
+      }
+    }
+    loadProject();
+  </script>
+</body>
+</html>

@@ -1,91 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="../../assets/stars.png" type="image/png">
-  <title>Resume | Evan Mullins</title> 
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 0.6s ease forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <meta name="description" content="Resume for Evan Mullins.">
+  <link rel="icon" href="../../assets/stars.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <title>Resume — Evan Mullins</title>
 </head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="../../index.html" aria-label="Evan Mullins home">EM<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <a href="../projects/projects.html">Work</a>
+      <a class="active" href="resume.html">Resume</a>
+      <a href="mailto:evangmullins@gmail.com">Contact</a>
+    </nav>
+  </header>
 
-<body class="bg-slate-950 text-gray-200 font-sans">
+  <main class="resume-page">
+    <section class="resume-intro">
+      <div>
+        <p class="eyebrow">Resume</p>
+        <h1>Experience, education,<br><em>and what’s next.</em></h1>
+      </div>
+      <div class="resume-actions">
+        <p>A concise record of my academic, engineering, and project experience.</p>
+        <a class="button" href="resume.pdf" download>Download PDF <span>↓</span></a>
+      </div>
+    </section>
 
-<!-- NAVBAR -->
-<nav class="bg-gradient-to-l from-slate-900 via-indigo-950 to-violet-950 shadow-sm sticky top-0 z-10 fade-in">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="font-semibold text-lg">
-    <a href="../../index.html" 
-      class="inline-flex items-center gap-2 transition-transform duration-200 hover:scale-105 hover:text-indigo-400">
+    <section class="resume-viewer" aria-label="Resume preview">
+      <iframe src="resume.pdf" title="Evan Mullins resume PDF">
+        <p>Your browser does not support embedded PDFs. <a href="resume.pdf">Download the resume PDF</a>.</p>
+      </iframe>
+    </section>
+  </main>
 
-      <img src="../../assets/purpledragonVIKING.gif" 
-          alt="Logo" 
-          class="h-16 w-16 rounded-full border-2 border-violet-400">
-
-      Home
-    </a>
-  </h1>
-  
-  <div class="space-x-6 text-sm">
-      <a href="../../pages/about/about.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        About Me
-      </a>
-      <a href="../projects/projects.html"
-         class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Projects
-      </a>
-      <a href="resume.html"
-         class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Resume
-      </a>
-      <a href="../contact/contact.html"
-         class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Contact
-      </a>
-    </div>
-
-  </div>
-</nav>
-
-<!-- RESUME SECTION -->
-<section class="max-w-5xl mx-auto px-6 py-20">
-
-  <h2 class="text-4xl font-bold mb-6 fade-in">
-    Resume
-  </h2>
-
-  <div class="h-px w-20 bg-violet-700/40 mb-10 fade-in" style="animation-delay: 0.1s;"></div>
-
-  <!-- PDF Viewer -->
-  <div class="fade-in" style="animation-delay: 0.2s;">
-    <iframe 
-      src="resume.pdf"
-      class="w-full h-[85vh] rounded-lg shadow-lg border border-slate-800"
-    ></iframe>
-  </div>
-
-</section>
-
-<footer class="max-w-5xl mx-auto px-6 py-12 text-sm text-gray-500 fade-in" style="animation-delay: 0.3s;">
-  <p>@ 2026 Evan Mullins</p>
-</footer>
-
+  <footer class="site-footer">
+    <p>© 2026 Evan Mullins</p>
+    <a href="mailto:evangmullins@gmail.com">evangmullins@gmail.com</a>
+  </footer>
 </body>
 </html>

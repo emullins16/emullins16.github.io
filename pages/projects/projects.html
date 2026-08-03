@@ -1,210 +1,57 @@
-
-<!-- To run, CD dir then python -m http.server 8000, then http://localhost:8000/pages/projects/projects.html   -->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="../../assets/stars.png" type="image/png">
-  <title>Projects | Evan Mullins</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-
-    html {
-    scroll-behavior: smooth;
-  }
-
-  .slide-bg {
-    background-size: 150% 150%;
-    transition: background-position 0.5s ease;
-  }
-  .slide-bg:hover {
-    background-position: right center;
-  }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 0.6s ease forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+  <meta name="description" content="Selected engineering projects by Evan Mullins.">
+  <link rel="icon" href="../../assets/stars.png" type="image/png">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <title>Work — Evan Mullins</title>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="../../index.html" aria-label="Evan Mullins home">EM<span>.</span></a>
+    <nav aria-label="Primary navigation">
+      <a class="active" href="projects.html">Work</a>
+      <a href="../resume/resume.html">Resume</a>
+      <a href="mailto:evangmullins@gmail.com">Contact</a>
+    </nav>
+  </header>
+  <main class="work-page">
+    <section class="page-intro">
+      <p class="eyebrow">Selected work</p>
+      <h1>Engineering, with<br><em>curiosity in the details.</em></h1>
+      <p class="intro-copy">A growing collection of design, software, data, and build projects. Each project starts with a practical question and ends with something to learn from.</p>
+    </section>
+    <section class="project-list" id="project-list" aria-label="Engineering projects"></section>
+  </main>
+  <footer class="site-footer">
+    <p>© 2026 Evan Mullins</p>
+    <a href="mailto:evangmullins@gmail.com">evangmullins@gmail.com</a>
+  </footer>
+  <script>
+    async function loadProjects() {
+      const container = document.getElementById('project-list');
+      try {
+        const response = await fetch('projects.json');
+        const projects = await response.json();
+        projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+        container.innerHTML = projects.map((project, index) => `
+          <a class="project-row" href="project.html?project=${encodeURIComponent(project.id)}">
+            <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
+            <div class="project-thumbnail"><img src="${project.image}" alt="${project.title}"></div>
+            <div class="project-summary">
+              <p class="project-meta">${project.type} · ${project.dateDisplay}</p>
+              <h2>${project.title}</h2>
+              <p>${project.description}</p>
+            </div>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>`).join('');
+      } catch (error) {
+        container.innerHTML = '<p class="empty-state">Projects could not be loaded. Please try again shortly.</p>';
       }
     }
-  </style>
-</head>
-
-<body class="bg-slate-950 text-gray-200 font-sans">
-
-<nav class="bg-gradient-to-l from-slate-900 via-indigo-950 to-violet-950 shadow-sm sticky top-0 z-10 fade-in">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="font-semibold text-lg">
-    <a href="../../index.html" 
-      class="inline-flex items-center gap-2 transition-transform duration-200 hover:scale-105 hover:text-indigo-400">
-
-      <img src="../../assets/purpledragonVIKING.gif" 
-          alt="Logo" 
-          class="h-16 w-16 rounded-full border-2 border-violet-400">
-
-      Home
-    </a>
-  </h1>
-
-  <div class="space-x-6 text-sm">
-      <a href="../../pages/about/about.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        About Me
-      </a>
-      <a href="projects.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Projects
-      </a>
-      <a href="../../pages/resume/resume.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Resume
-      </a>  
-      <a href="../../pages/contact/contact.html"
-        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
-
-<section class="max-w-5xl mx-auto px-6 py-20">
-
-  <h2 class="text-4xl font-bold mb-6 fade-in">
-    Projects
-  </h2>
-
-  <div class="h-px w-20 bg-violet-700/40 mb-10 fade-in" style="animation-delay: 0.1s;"></div>
-
-  <p class="text-gray-300 max-w-3xl leading-relaxed fade-in" style="animation-delay: 0.2s;">
-    This page is under construction — soon it will include my projects and the work I’ve done in engineering, global development, and more.
-  </p>
-
-</section>
-<h2 class="text-2xl font-semibold mb-10 text-center">Project Galleries</h2>
-<div class="flex items-center justify-center flex-col md:flex-row gap-10 fade-in" style="animation-delay: 0.3s;">
-  <a href="engineering/engineering.html" 
-     class="w-80 slide-bg bg-gradient-to-r from-[#69809e] to-indigo-900 text-white px-12 py-8 rounded-lg shadow-lg text-center">
-    <h2 class="text-2xl font-semibold mb-2">Engineering Projects</h2>
-  </a>
-  <a href="global/global.html" 
-     class="w-80 slide-bg bg-gradient-to-r from-emerald-300 to-emerald-700 text-white px-12 py-8 rounded-lg shadow-lg text-center">
-    <h2 class="text-2xl font-semibold mb-2">Global Experiences</h2>
-  </a>
-</div>
-
-<!-- Timeline -->
-<section class="max-w-3xl mx-auto mt-20 px-6">
-  <h2 class="text-2xl font-semibold mb-10 text-center">Project Timeline:</h2>
-  <div id="timeline" class="relative border-l border-gray-700"></div>
-</section>
-
-<!-- Fade-in animation -->
-<style>
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: fade-in 0.6s ease forwards;
-}
-</style>
-
-
-<footer class="max-w-5xl mx-auto px-6 py-12 text-sm text-gray-500">
-  <p>@ 2026 Evan Mullins</p>
-</footer>
-
-
-<!-- Timeline script -->
-<script>
-async function loadTimeline() {
-  const res = await fetch("projects.json");
-  const projects = await res.json();
-
-  // Sort newest → oldest
-  projects.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const timeline = document.getElementById("timeline");
-
-  projects.forEach((p, i) => {
-    const delay = 0.1 + i * 0.15;
-
-    const colors = {
-      engineering: "indigo",
-      global: "emerald"
-    };
-
-    const color = colors[p.category] || "gray";
-
-    if (p.type === "divider") {
-      const divider = `
-        <div class="ml-6 my-12 flex items-center gap-4 opacity-0 animate-fade-in [animation-delay:${delay}s]">
-          <div class="w-3 h-3 bg-slate-500 rounded-full border border-slate-900"></div>
-          <h2 class="text-lg font-semibold text-gray-300 tracking-wide uppercase">
-            ${p.label}
-          </h2>
-          <div class="flex-1 h-px bg-slate-700"></div>
-        </div>
-      `;
-      timeline.insertAdjacentHTML("beforeend", divider);
-      return; // Skip normal card rendering
-    }
-
-
-    const item = `
-      <a href="${p.link}"
-         class="group block mb-10 ml-6 opacity-0 animate-fade-in [animation-delay:${delay}s] transition-transform duration-300 hover:scale-[1.02]">
-
-        <!-- Dot -->
-        <div class="absolute w-3 h-3 bg-${color}-400 rounded-full -left-1.5 border border-slate-900"></div>
-
-        
-
-        <!-- Card -->
-        <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700
-                    group-hover:border-${color}-400/60 transition-colors
-                    flex justify-between gap-4">
-
-          <!-- Image -->
-          <img src="${p.image}"
-               alt="Project preview"
-               class="w-28 h-28 object-cover rounded-md border border-slate-700
-                      group-hover:border-${color}-400/60 transition-all duration-300 ${p.imageScale}"
-               style="object-position: ${p.imagePosition};" />
-
-          <!-- Text -->
-          <div class="flex-1">
-            <h3 class="text-xl font-semibold">${p.title}</h3>
-            <p class="text-sm text-gray-300 mb-1">${p.location}</p>
-            <p class="text-sm text-gray-400 mb-2">${p.dateDisplay}</p>
-            <p class="text-gray-300 mb-1">${p.description}</p>
-            <span class="text-${color}-400 group-hover:text-${color}-300 text-sm">
-              View Project →
-            </span>
-          </div>
-
-        </div>
-      </a>
-    `;
-
-    timeline.insertAdjacentHTML("beforeend", item);
-  });
-}
-
-loadTimeline();
-</script>
-
-
-
+    loadProjects();
+  </script>
 </body>
-
-
-
 </html>

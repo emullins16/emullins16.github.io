@@ -62,5 +62,29 @@
     "tags": ["Healthcare", "UX", "Hackathon"],
     "highlights": ["Focused on a sensitive, real-world information-management problem.", "Developed a clear product narrative under a short deadline.", "Presented a complete concept with supporting research and visuals."],
     "gallery": ["../../assets/engassets/dte25/dte1.jpg", "../../assets/engassets/dte25/dte2.jpg", "../../assets/engassets/dte25/s1.jpg", "../../assets/engassets/dte25/s2.png"]
-  }
+  },
+  {
+  "id": "zoltek",
+  "title": "Zoltek",
+  "type": "Engineering project",
+  "date": "2026-08-05",
+  "dateDisplay": "August 2026",
+  "image": "../../assets/engassets/zoltek/IMG_2870.jpg",
+  "heroImage": "../../assets/engassets/zoltek/IMG_2977.jpg",
+  "description": "A short one-sentence description of the project.",
+  "overview": "A slightly longer explanation of the problem, process, and result.",
+  "role": "Your role on the project",
+  "outcome": "What you built, learned, or delivered.",
+  "tags": ["Engineering", "Design"],
+  "highlights": [
+    "First key contribution or result.",
+    "Second key contribution or result.",
+    "Third key contribution or result."
+  ],
+  "gallery": [
+    "../../assets/engassets/zoltek/IMG_2870.jpg",
+    "../../assets/engassets/zoltek/IMG_2977.jpg",
+    "../../assets/engassets/zoltek/IMG_3031.jpg"
+  ]
+}
 ]

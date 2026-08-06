@@ -19,7 +19,7 @@
       const container = document.getElementById('project');
       const id = new URLSearchParams(window.location.search).get('project');
       try {
-        const response = await fetch('projects.json');
+        const response = await fetch('projects.json', { cache: 'no-store' });
         const projects = await response.json();
         const p = projects.find(project => project.id === id);
         if (!p) throw new Error('Not found');

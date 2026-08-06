@@ -33,7 +33,7 @@
     async function loadProjects() {
       const container = document.getElementById('project-list');
       try {
-        const response = await fetch('projects.json');
+        const response = await fetch('projects.json', { cache: 'no-store' });
         const projects = await response.json();
         projects.sort((a, b) => new Date(b.date) - new Date(a.date));
         container.innerHTML = projects.map((project, index) => `

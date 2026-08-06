@@ -66,11 +66,11 @@
   {
   "id": "zoltek",
   "title": "Zoltek",
-  "type": "Engineering project",
+  "type": "Internship",
   "date": "2026-08-01",
-  "dateDisplay": "August 2026",
-  "image": "../../assets/engassets/zoltek/IMG_2870.jpg",
-  "heroImage": "../../assets/engassets/zoltek/IMG_2977.jpg",
+  "dateDisplay": "May-August 2026",
+  "image": "../../assets/engassets/zoltek/IMG_3731.jpg",
+  "heroImage": "../../assets/engassets/zoltek/IMG_2870.jpg",
   "description": "A short one-sentence description of the project.",
   "overview": "A slightly longer explanation of the problem, process, and result.",
   "role": "Your role on the project",
@@ -82,9 +82,12 @@
     "Third key contribution or result."
   ],
   "gallery": [
-    "../../assets/engassets/zoltek/IMG_2870.jpg",
+    "../../assets/engassets/zoltek/IMG_2861.jpg",
     "../../assets/engassets/zoltek/IMG_2977.jpg",
-    "../../assets/engassets/zoltek/IMG_3031.jpg"
+    "../../assets/engassets/zoltek/IMG_3031.jpg",
+    "../../assets/engassets/zoltek/IMG_3448.jpg",
+    "../../assets/engassets/zoltek/IMG_3750.jpg",
+    "../../assets/engassets/zoltek/IMG_3350.jpg"
   ]
 }
 ]

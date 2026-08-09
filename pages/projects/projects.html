@@ -12,6 +12,7 @@
   <header class="site-header">
     <a class="wordmark" href="../../index.html" aria-label="Evan Mullins home">EM<span>.</span></a>
     <nav aria-label="Primary navigation">
+      <a href="../../index.html">Home</a>
       <a class="active" href="projects.html">Work</a>
       <a href="../resume/resume.html">Resume</a>
       <a href="mailto:evangmullins@gmail.com">Contact</a>
@@ -20,8 +21,11 @@
   <main class="work-page">
     <section class="page-intro">
       <p class="eyebrow">Selected work</p>
-      <h1>Engineering, with<br><em>curiosity in the details.</em></h1>
+      <h1><strong>Things I've Built</strong></h1>
       <p class="intro-copy">A growing collection of design, software, data, and build projects. Each project starts with a practical question and ends with something to learn from.</p>
+    </section>
+    <section class="timeline-section" aria-label="Career timeline">
+      <div class="timeline" id="timeline"></div>
     </section>
     <section class="project-list" id="project-list" aria-label="Engineering projects"></section>
   </main>
@@ -30,12 +34,44 @@
     <a href="mailto:evangmullins@gmail.com">evangmullins@gmail.com</a>
   </footer>
   <script>
+    async function loadTimeline() {
+    const track = document.getElementById('timeline');
+    try {
+      const response = await fetch('projects.json', { cache: 'no-store' });
+      const projects = await response.json();
+
+      const matches = (p) => /design team|internship/i.test(p.type || '');
+      const timelineProjects = projects
+        .filter(matches)
+        .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest, left to right
+
+      track.innerHTML = timelineProjects.map(project => `
+        <a class="timeline-item" href="project.html?project=${encodeURIComponent(project.id)}">
+          <span class="timeline-date">${project.dateDisplay}</span>
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <span class="timeline-type">${project.type}</span>
+          <h3 class="timeline-title">${project.title}</h3>
+        </a>`).join('');
+    } catch (error) {
+      track.innerHTML = '<p class="empty-state">Timeline could not be loaded.</p>';
+    }
+  }
     async function loadProjects() {
       const container = document.getElementById('project-list');
       try {
         const response = await fetch('projects.json', { cache: 'no-store' });
         const projects = await response.json();
-        projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
+        const isPresent = (p) => /present/i.test(p.dateDisplay || '');
+        
+        projects.sort((a, b) => {
+          const aPresent = isPresent(a);
+          const bPresent = isPresent(b);
+          if (aPresent && !bPresent) return -1;
+          if (!aPresent && bPresent) return 1;
+          return new Date(b.date) - new Date(a.date);
+        });
+
         container.innerHTML = projects.map((project, index) => `
           <a class="project-row" href="project.html?project=${encodeURIComponent(project.id)}">
             <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
@@ -51,6 +87,7 @@
         container.innerHTML = '<p class="empty-state">Projects could not be loaded. Please try again shortly.</p>';
       }
     }
+    loadTimeline();
     loadProjects();
   </script>
 </body>

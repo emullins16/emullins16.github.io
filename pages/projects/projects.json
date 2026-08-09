@@ -65,10 +65,10 @@
   },
   {
   "id": "zoltek",
-  "title": "Zoltek",
-  "type": "Internship",
+  "title": "Carbon Fiber Product Development Intern",
+  "type": "Internship  · Zoltek",
   "date": "2026-08-01",
-  "dateDisplay": "May-August 2026",
+  "dateDisplay": "May - August 2026",
   "image": "../../assets/engassets/zoltek/IMG_3731.jpg",
   "heroImage": "../../assets/engassets/zoltek/IMG_2870.jpg",
   "description": "A short one-sentence description of the project.",
@@ -89,5 +89,102 @@
     "../../assets/engassets/zoltek/IMG_3750.jpg",
     "../../assets/engassets/zoltek/IMG_3350.jpg"
   ]
-}
+  },
+  {
+  "id": "radome",
+  "title": "Radome Analysis for Wildfire Response UAVs",
+  "type": "Research Project",
+  "date": "2026-03-01",
+  "dateDisplay": "March 2026",
+  "image": "../../assets/engassets/radome/radome.png",
+  "heroImage": "../../assets/engassets/radome/radome.png",
+  "description": "A research project focused on developing a new radome design for improved signal transmission.",
+  "overview": "This project aimed to design and test a novel radome configuration that would enhance the performance of radar systems in various environmental conditions.",
+  "role": "Research assistant · design and testing",
+  "outcome": "Developed a functional radome prototype and conducted preliminary testing under controlled conditions.",
+  "tags": ["Research", "Engineering", "Design"],
+  "highlights": [
+    "Designed a lightweight radome with improved signal transmission properties.",
+    "Conducted extensive testing to validate the design under various environmental conditions.",
+    "Documented the results and presented findings at the annual engineering conference."
+  ],
+  "gallery": [
+    "../../assets/engassets/radome/radome1.png",
+    "../../assets/engassets/radome/radome2.png",
+    "../../assets/engassets/radome/radome3.png"
+  ],
+  "pdf": "../../assets/engassets/radome/f3_mullins.pdf"
+  },
+  {
+  "id": "Swamp Launch Rocket Team",
+  "title": "IREC Composites Engineer",
+  "type": "Design Team · Swamp Launch",
+  "date": "2025-08-01",
+  "dateDisplay": "August 2025 - April 2026",
+  "image": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "heroImage": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "description": "Manufacturing precision composite structures for high-performance SRAD rockets.",
+  "overview": "This team focuses on the design, fabrication, and testing of composite rocket components, contributing to the success of Swamp Launch's participation in the International Rocketry Challenge (IREC).",
+  "role": "Composites and IREC team member",
+  "outcome": "Successfully contributed to the development of composite rocket components and participated in the International Rocketry Challenge (IREC).",
+  "tags": ["Aerospace", "Composites", "Teamwork"],
+  "highlights": [
+    "Designed and fabricated composite rocket components for improved performance.",
+    "Collaborated with team members to optimize designs and ensure structural integrity.",
+    "Participated in the International Rocketry Challenge, achieving competitive results."
+  ],
+  "gallery": [
+    "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+    "../../assets/engassets/swamp launch/IMG_20250801_172200.jpg",
+    "../../assets/engassets/swamp launch/IMG_20250801_172205.jpg"
+  ]
+  },
+  {
+  "id": "Swamp Launch Rocket Team",
+  "title": "Composites Development Engineer",
+  "type": "Design Team · Swamp Launch",
+  "date": "2026-08-18",
+  "dateDisplay": "August 2026 - Present",
+  "image": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "heroImage": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "description": "Advancing Swamp Launch's composite fabrication capabilities for the Spaceshot Development Program.",
+  "overview": "With the development division, I contributed to developing innovative composite solutions for SRAD rocket applications.",
+  "role": "Composites and IREC team member",
+  "outcome": "Successfully contributed to the development of composite rocket components and participated in the International Rocketry Challenge (IREC).",
+  "tags": ["Aerospace", "Composites", "Teamwork"],
+  "highlights": [
+    "Designed and fabricated composite rocket components for improved performance.",
+    "Collaborated with team members to optimize designs and ensure structural integrity.",
+    "Participated in the International Rocketry Challenge, achieving competitive results."
+  ],
+  "gallery": [
+    "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+    "../../assets/engassets/swamp launch/IMG_20250801_172200.jpg",
+    "../../assets/engassets/swamp launch/IMG_20250801_172205.jpg"
+  ]
+  },
+  {
+  "id": "Space Trek Academy",
+  "title": "HAB Payload and Thermal Engineer",
+  "type": "Design Team · Space Trek Academy",
+  "date": "2026-08-12",
+  "dateDisplay": "July - August 2026",
+  "image": "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
+  "heroImage": "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
+  "description": "An educational program focused on space exploration and engineering.",
+  "overview": "This program provides hands-on experience in space-related engineering and science, preparing students for careers in the aerospace industry.",
+  "role": "Participant",
+  "outcome": "Gained valuable knowledge and skills in space engineering and science.",
+  "tags": ["Education", "Space", "Engineering"],
+  "highlights": [
+    "Learned about the principles of space exploration and engineering.",
+    "Participated in various hands-on activities and experiments.",
+    "Developed a deeper understanding of the challenges and opportunities in the aerospace industry."
+  ],
+  "gallery": [
+    "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
+    "../../assets/engassets/space trek/IMG_20250901_172200.jpg",
+    "../../assets/engassets/space trek/IMG_20250901_172205.jpg"
+  ]
+  }
 ]

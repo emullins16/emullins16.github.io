@@ -22,11 +22,25 @@
     <section class="page-intro">
       <p class="eyebrow">Selected work</p>
       <h1><strong>Things I've Built</strong></h1>
-      <p class="intro-copy">A growing collection of design, software, data, and build projects. Each project starts with a practical question and ends with something to learn from.</p>
+      <p class="intro-copy">A growing collection of projects I have worked on.</p>
     </section>
     <section class="timeline-section" aria-label="Career timeline">
       <div class="timeline" id="timeline"></div>
     </section>
+
+    <section class="list-controls" aria-label="Filter and sort projects">
+      <div class="filter-tags" id="filter-tags"></div>
+      <div class="sort-control">
+        <label for="sort-select">Sort</label>
+        <select id="sort-select">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="az">A–Z</option>
+          <option value="za">Z–A</option>
+        </select>
+      </div>
+    </section>
+
     <section class="project-list" id="project-list" aria-label="Engineering projects"></section>
   </main>
   <footer class="site-footer">
@@ -35,58 +49,137 @@
   </footer>
   <script>
     async function loadTimeline() {
-    const track = document.getElementById('timeline');
-    try {
-      const response = await fetch('projects.json', { cache: 'no-store' });
-      const projects = await response.json();
+      const track = document.getElementById('timeline');
+      try {
+        const response = await fetch('projects.json', { cache: 'no-store' });
+        const projects = await response.json();
 
-      const matches = (p) => /design team|internship/i.test(p.type || '');
-      const timelineProjects = projects
-        .filter(matches)
-        .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest, left to right
+        const matches = (p) => /design team|internship/i.test(p.type || '');
+        const timelineProjects = projects
+          .filter(matches)
+          .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-      track.innerHTML = timelineProjects.map(project => `
-        <a class="timeline-item" href="project.html?project=${encodeURIComponent(project.id)}">
-          <span class="timeline-date">${project.dateDisplay}</span>
-          <span class="timeline-dot" aria-hidden="true"></span>
-          <span class="timeline-type">${project.type}</span>
-          <h3 class="timeline-title">${project.title}</h3>
-        </a>`).join('');
-    } catch (error) {
-      track.innerHTML = '<p class="empty-state">Timeline could not be loaded.</p>';
+        track.innerHTML = timelineProjects.map(project => `
+          <a class="timeline-item" href="project.html?project=${encodeURIComponent(project.id)}">
+            <span class="timeline-date">${project.dateDisplay}</span>
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="timeline-type">${project.type}</span>
+            <div class="timeline-title-row">
+              <img class="timeline-logo" src="${project.logo || project.image}" alt="${project.title}">
+              <h3 class="timeline-title">${project.title}</h3>
+            </div>
+          </a>`).join('');
+      } catch (error) {
+        track.innerHTML = '<p class="empty-state">Timeline could not be loaded.</p>';
+      }
     }
-  }
+
+    let allProjects = [];
+    let activeTags = new Set();
+    let activeSort = 'newest';
+
+    const isPresent = (p) => /present/i.test(p.dateDisplay || '');
+
+    function sortProjects(list) {
+      const sorted = [...list];
+      switch (activeSort) {
+        case 'oldest':
+          return sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+        case 'az':
+          return sorted.sort((a, b) => a.title.localeCompare(b.title));
+        case 'za':
+          return sorted.sort((a, b) => b.title.localeCompare(a.title));
+        case 'newest':
+        default:
+          return sorted.sort((a, b) => {
+            const aPresent = isPresent(a);
+            const bPresent = isPresent(b);
+            if (aPresent && !bPresent) return -1;
+            if (!aPresent && bPresent) return 1;
+            return new Date(b.date) - new Date(a.date);
+          });
+      }
+    }
+
+    const CATEGORY_ORDER = ['Aerospace', 'Research', 'Programming', 'Product & Design'];
+
+    function renderTagFilters() {
+      const tagBar = document.getElementById('filter-tags');
+      const presentCategories = CATEGORY_ORDER.filter(cat =>
+        allProjects.some(p => p.category === cat)
+      );
+
+      const chip = (label, isActive, cat) => `
+        <button class="filter-tag${isActive ? ' active' : ''}" data-tag="${cat ?? ''}" type="button">
+          ${label}
+        </button>`;
+
+      tagBar.innerHTML = [
+        chip('All', activeTags.size === 0, ''),
+        ...presentCategories.map(cat => chip(cat, activeTags.has(cat), cat))
+      ].join('');
+
+      tagBar.querySelectorAll('.filter-tag').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tag = btn.dataset.tag;
+          if (!tag) {
+            activeTags.clear();
+          } else if (activeTags.has(tag)) {
+            activeTags.delete(tag);
+          } else {
+            activeTags.add(tag);
+          }
+          renderTagFilters();
+          renderProjectList();
+        });
+      });
+    }
+
+    function renderProjectList() {
+      const container = document.getElementById('project-list');
+
+      const filtered = activeTags.size === 0
+        ? allProjects
+        : allProjects.filter(p => activeTags.has(p.category));
+
+      const sorted = sortProjects(filtered);
+
+      if (!sorted.length) {
+        container.innerHTML = '<p class="empty-state">No projects match the selected tags.</p>';
+        return;
+      }
+
+      container.innerHTML = sorted.map((project, index) => `
+        <a class="project-row" href="project.html?project=${encodeURIComponent(project.id)}">
+          <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
+          <div class="project-thumbnail"><img src="${project.image}" alt="${project.title}"></div>
+          <div class="project-summary">
+            <p class="project-meta">${project.type} · ${project.dateDisplay}</p>
+            <h2>${project.title}</h2>
+            <p>${project.description}</p>
+          </div>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>`).join('');
+    }
+
     async function loadProjects() {
       const container = document.getElementById('project-list');
       try {
         const response = await fetch('projects.json', { cache: 'no-store' });
-        const projects = await response.json();
-        
-        const isPresent = (p) => /present/i.test(p.dateDisplay || '');
-        
-        projects.sort((a, b) => {
-          const aPresent = isPresent(a);
-          const bPresent = isPresent(b);
-          if (aPresent && !bPresent) return -1;
-          if (!aPresent && bPresent) return 1;
-          return new Date(b.date) - new Date(a.date);
-        });
+        allProjects = await response.json();
 
-        container.innerHTML = projects.map((project, index) => `
-          <a class="project-row" href="project.html?project=${encodeURIComponent(project.id)}">
-            <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
-            <div class="project-thumbnail"><img src="${project.image}" alt="${project.title}"></div>
-            <div class="project-summary">
-              <p class="project-meta">${project.type} · ${project.dateDisplay}</p>
-              <h2>${project.title}</h2>
-              <p>${project.description}</p>
-            </div>
-            <span class="project-arrow" aria-hidden="true">↗</span>
-          </a>`).join('');
+        renderTagFilters();
+        renderProjectList();
+
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+          activeSort = e.target.value;
+          renderProjectList();
+        });
       } catch (error) {
         container.innerHTML = '<p class="empty-state">Projects could not be loaded. Please try again shortly.</p>';
       }
     }
+
     loadTimeline();
     loadProjects();
   </script>

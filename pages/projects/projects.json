@@ -12,6 +12,7 @@
     "role": "Product design, CAD, analysis, and presentation",
     "outcome": "Delivered a refined concept, design calculations, CAD model, and presentation documenting the design process.",
     "tags": ["Product design", "CAD", "Prototyping"],
+    "category": "Product & Design",
     "highlights": ["Framed the project around the friction points of a familiar object.", "Balanced spill resistance, usability, and material efficiency.", "Documented the concept with calculations and a complete CAD model."],
     "gallery": ["../../assets/engassets/cup/still.png", "../../assets/engassets/cup/drawing.png", "../../assets/engassets/cup/spill.png"]
   },
@@ -28,6 +29,7 @@
     "role": "Data exploration, challenge research, and team prototyping",
     "outcome": "Created a data-informed concept for translating rainfall and field data into actionable location insights.",
     "tags": ["Data", "Environmental systems", "Hackathon"],
+    "category": "Programming",
     "highlights": ["Connected multiple environmental signals to a concrete public-health question.", "Worked quickly to turn research into a clear project direction.", "Communicated the result through a simple, accessible concept."],
     "gallery": ["../../assets/engassets/nasa hack/1770153904686.jpg", "../../assets/engassets/nasa hack/1770154227056.jpg", "../../assets/engassets/nasa hack/1770905840867.jpg"]
   },
@@ -44,8 +46,9 @@
     "role": "Hackathon team member · product concept and extension development",
     "outcome": "Built a working Chrome-extension concept during SwampHacks XI, with a playful visual system and student-centered motivation loop.",
     "tags": ["Chrome extension", "EdTech", "Hackathon"],
+    "category": "Programming",
     "highlights": ["Designed for a K–8 audience with clear, encouraging interactions.", "Connected assignment completion to a simple game loop.", "Created custom pixel-art companions and interface assets."],
-    "gallery": ["../../assets/engassets/swamphacks/swamphacks1.jpg", "../../assets/engassets/swamphacks/swamphacks2.png", "../../assets/engassets/swamphacks/swamphacks4.png", "../../assets/engassets/swamphacks/armadillo.gif"]
+    "gallery": ["../../assets/engassets/swamphacks/swamphacks1.jpg", "../../assets/engassets/swamphacks/swamphacks2.png", "../../assets/engassets/swamphacks/armadillo.gif", "../../assets/engassets/swamphacks/purpledragonviking.gif", "../../assets/engassets/swamphacks/coolblueturtle.gif"]
   },
   {
     "id": "medlog",
@@ -53,12 +56,13 @@
     "type": "DTE Designathon 2025",
     "date": "2025-11-08",
     "dateDisplay": "November 2025",
-    "image": "../../assets/engassets/dte25/browser.png",
-    "heroImage": "../../assets/engassets/dte25/dte1.jpg",
+    "image": "../../assets/engassets/dte25/dte2.jpg",
+    "heroImage": "../../assets/engassets/dte25/s1.jpg",
     "description": "A medical-transcription and sharing platform built during my first hackathon.",
     "overview": "Medlog is a concept for reducing the friction of recording, organizing, and sharing medical information across appointments and care teams.",
     "role": "Hackathon team member · concept development and prototyping",
     "outcome": "Produced a cohesive platform concept and presentation during the DTE Designathon 2025.",
+    "category": "Programming",
     "tags": ["Healthcare", "UX", "Hackathon"],
     "highlights": ["Focused on a sensitive, real-world information-management problem.", "Developed a clear product narrative under a short deadline.", "Presented a complete concept with supporting research and visuals."],
     "gallery": ["../../assets/engassets/dte25/dte1.jpg", "../../assets/engassets/dte25/dte2.jpg", "../../assets/engassets/dte25/s1.jpg", "../../assets/engassets/dte25/s2.png"]
@@ -69,6 +73,7 @@
   "type": "Internship  · Zoltek",
   "date": "2026-08-01",
   "dateDisplay": "May - August 2026",
+  "logo": "../../assets/engassets/logos/zoltek.jpg",
   "image": "../../assets/engassets/zoltek/IMG_3731.jpg",
   "heroImage": "../../assets/engassets/zoltek/IMG_2870.jpg",
   "description": "A short one-sentence description of the project.",
@@ -103,6 +108,7 @@
   "role": "Research assistant · design and testing",
   "outcome": "Developed a functional radome prototype and conducted preliminary testing under controlled conditions.",
   "tags": ["Research", "Engineering", "Design"],
+  "category": "Research",
   "highlights": [
     "Designed a lightweight radome with improved signal transmission properties.",
     "Conducted extensive testing to validate the design under various environmental conditions.",
@@ -116,51 +122,57 @@
   "pdf": "../../assets/engassets/radome/f3_mullins.pdf"
   },
   {
-  "id": "Swamp Launch Rocket Team",
+  "id": "Swamp Launch IREC",
   "title": "IREC Composites Engineer",
   "type": "Design Team · Swamp Launch",
   "date": "2025-08-01",
   "dateDisplay": "August 2025 - April 2026",
-  "image": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
-  "heroImage": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "logo": "../../assets/engassets/logos/sl.jpg",
+  "image": "../../assets/engassets/swamp launch/image-20260408-230344-981916d3.jpeg",
+  "heroImage": "../../assets/engassets/swamp launch/image-20260403-000122-919cd179.jpeg",
   "description": "Manufacturing precision composite structures for high-performance SRAD rockets.",
   "overview": "This team focuses on the design, fabrication, and testing of composite rocket components, contributing to the success of Swamp Launch's participation in the International Rocketry Challenge (IREC).",
   "role": "Composites and IREC team member",
   "outcome": "Successfully contributed to the development of composite rocket components and participated in the International Rocketry Challenge (IREC).",
   "tags": ["Aerospace", "Composites", "Teamwork"],
+  "category": "Aerospace",
   "highlights": [
     "Designed and fabricated composite rocket components for improved performance.",
     "Collaborated with team members to optimize designs and ensure structural integrity.",
     "Participated in the International Rocketry Challenge, achieving competitive results."
   ],
   "gallery": [
-    "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
-    "../../assets/engassets/swamp launch/IMG_20250801_172200.jpg",
-    "../../assets/engassets/swamp launch/IMG_20250801_172205.jpg"
+    "../../assets/engassets/swamp launch/image-20260325-002030-7cde96d4.jpeg",
+    "../../assets/engassets/swamp launch/IMG_2460.jpg",
+    "../../assets/engassets/swamp launch/image-20260210-011445-c9cd943d.jpeg",
+    "../../assets/engassets/swamp launch/image-20260327-010921-0d2abafc.jpeg",
+    "../../assets/engassets/swamp launch/image-20260313-015418-9577ee10.jpeg"
   ]
   },
   {
-  "id": "Swamp Launch Rocket Team",
+  "id": "Swamp Launch Development",
   "title": "Composites Development Engineer",
   "type": "Design Team · Swamp Launch",
   "date": "2026-08-18",
   "dateDisplay": "August 2026 - Present",
-  "image": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
-  "heroImage": "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
+  "logo": "../../assets/engassets/logos/sl.jpg",
+  "image": "../../assets/engassets/swamp launch/1779338059643.jpg",
+  "heroImage": "../../assets/engassets/swamp launch/1779338059643.jpg",
   "description": "Advancing Swamp Launch's composite fabrication capabilities for the Spaceshot Development Program.",
   "overview": "With the development division, I contributed to developing innovative composite solutions for SRAD rocket applications.",
-  "role": "Composites and IREC team member",
-  "outcome": "Successfully contributed to the development of composite rocket components and participated in the International Rocketry Challenge (IREC).",
+  "role": "Development Engineer",
+  "outcome": "Contributed to the development of advanced composite fabrication techniques and materials for high-performance rocket components.",
   "tags": ["Aerospace", "Composites", "Teamwork"],
+  "category": "Aerospace",
   "highlights": [
     "Designed and fabricated composite rocket components for improved performance.",
     "Collaborated with team members to optimize designs and ensure structural integrity.",
     "Participated in the International Rocketry Challenge, achieving competitive results."
   ],
   "gallery": [
-    "../../assets/engassets/swamp launch/IMG_20250801_172155.jpg",
-    "../../assets/engassets/swamp launch/IMG_20250801_172200.jpg",
-    "../../assets/engassets/swamp launch/IMG_20250801_172205.jpg"
+    "../../assets/engassets/swamp launch/1779338060029.jpg",
+    "../../assets/engassets/swamp launch/1779338059643.jpg"
+  
   ]
   },
   {
@@ -169,22 +181,28 @@
   "type": "Design Team · Space Trek Academy",
   "date": "2026-08-12",
   "dateDisplay": "July - August 2026",
-  "image": "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
-  "heroImage": "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
+  "image": "../../assets/engassets/space trek/IMG_7560.JPG",
+  "logo": "../../assets/engassets/logos/fsgc-logo-1.png",
+  "heroImage": "../../assets/engassets/space trek/IMG_7560.JPG",
   "description": "An educational program focused on space exploration and engineering.",
   "overview": "This program provides hands-on experience in space-related engineering and science, preparing students for careers in the aerospace industry.",
-  "role": "Participant",
+  "role": "Media Liaison and Payload/Thermal Engineer",
   "outcome": "Gained valuable knowledge and skills in space engineering and science.",
-  "tags": ["Education", "Space", "Engineering"],
+  "tags": ["Communication", "Space", "Engineering"],
+  "category": "Aerospace",
   "highlights": [
     "Learned about the principles of space exploration and engineering.",
     "Participated in various hands-on activities and experiments.",
     "Developed a deeper understanding of the challenges and opportunities in the aerospace industry."
   ],
+  "link": { "label": "Documentary (YouTube)", "url": "https://www.youtube.com/watch?v=L_x-C89qUGg" },
   "gallery": [
-    "../../assets/engassets/space trek/IMG_20250901_172155.jpg",
-    "../../assets/engassets/space trek/IMG_20250901_172200.jpg",
-    "../../assets/engassets/space trek/IMG_20250901_172205.jpg"
+    "../../assets/engassets/space trek/IMG_7728.JPG",
+    "../../assets/engassets/space trek/IMG_7561.JPG",
+    "../../assets/engassets/space trek/IMG_7519.JPG",
+    "../../assets/engassets/space trek/IMG_7764.JPG",
+    "../../assets/engassets/space trek/IMG_7365.JPG",
+    "../../assets/engassets/space trek/5.PNG"
   ]
   }
 ]

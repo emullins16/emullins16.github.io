@@ -349,10 +349,12 @@ h1 em, h2 em {
 }
 
 .timeline {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 240px;
   gap: 48px;
   overflow-x: auto;
-  padding: 0px 0 20px;
+  padding: 0 0 20px;
   position: relative;
 }
 
@@ -367,7 +369,7 @@ h1 em, h2 em {
 }
 
 .timeline-item {
-  flex: 0 0 240px;
+  flex: 0 0 260x;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -396,6 +398,20 @@ h1 em, h2 em {
   letter-spacing: -.03em;
   margin: 4px 0 0;
   font-weight: 600;
+}
+
+.timeline-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -769,5 +785,72 @@ h1 em, h2 em {
 
   .back-link {
     margin: 28px 0 45px;
+  }
+}
+/* ─────────────────────────────────────────────────────────────────────────────
+   List Controls (filter + sort)
+────────────────────────────────────────────────────────────────────────────── */
+.list-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 0 24px;
+  flex-wrap: wrap;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-tag {
+  padding: 6px 12px;
+  background: var(--sand);
+  border: 1px solid transparent;
+  font: 500 .68rem 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.filter-tag:hover {
+  border-color: var(--line);
+}
+
+.filter-tag.active {
+  background: var(--ink);
+  color: var(--canvas);
+}
+
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-control label {
+  font: 500 .7rem 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+
+.sort-control select {
+  padding: 8px 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: 400 .85rem 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .list-controls {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

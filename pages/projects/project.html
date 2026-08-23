@@ -52,6 +52,17 @@
           pdfContainer.appendChild(pdfLink);
         }
 
+        if (p.link) {
+          const linkContainer = document.getElementById('pdf-container'); // or a new container
+          const a = document.createElement('a');
+          a.href = p.link.url;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.className = 'button';
+          a.textContent = p.link.label;
+          linkContainer.appendChild(a);
+        }
+
         
         } catch (error) {
         container.innerHTML = '<section class="not-found"><p class="eyebrow">Project not found</p><h1>That project isn’t here yet.</h1><a class="button" href="projects.html">Back to work</a></section>';

@@ -211,8 +211,8 @@
   "type": "MONSTER Research Group",
   "date": "2026-08-24",
   "dateDisplay": "August 2026 - Present",
-  "image": "../../assets/engassets/logos/dorkus.jpg",
-  "heroImage": "../../assets/engassets/logos/dorkus.jpg",
+  "image": "../../assets/engassets/logos/monster.jpg",
+  "heroImage": "../../assets/engassets/logos/monster.jpg",
   "description": "Analyzing open source thermodynamics software \"PyCALPHAD\" for the MONSTER research group.",
   "overview": "The MONSTER research group focuses on the development and application of inorganic materials science. My research focuses on thermodynamics and phase transformations.",
   "role": "Research Assistant",
@@ -226,7 +226,7 @@
   ],
   "link": { "label": "Research Group Website", "url": "https://monster.mse.ufl.edu/" },
   "gallery": [
-    "../../assets/engassets/logos/dorkus.jpg"
+    "../../assets/engassets/logos/monster.jpg"
   ]
 }
 ]

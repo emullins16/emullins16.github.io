@@ -25,7 +25,9 @@
       <p class="intro-copy">A growing collection of projects I have worked on.</p>
     </section>
     <section class="timeline-section" aria-label="Career timeline">
-      <div class="timeline" id="timeline"></div>
+      <div class="timeline">
+        <div class="timeline-track" id="timeline"></div>
+      </div>
     </section>
 
     <section class="list-controls" aria-label="Filter and sort projects">
@@ -54,7 +56,7 @@
         const response = await fetch('projects.json', { cache: 'no-store' });
         const projects = await response.json();
 
-        const matches = (p) => /design team|internship/i.test(p.type || '');
+        const matches = (p) => /design team|internship|research/i.test(p.type || '');
         const timelineProjects = projects
           .filter(matches)
           .sort((a, b) => new Date(a.date) - new Date(b.date));

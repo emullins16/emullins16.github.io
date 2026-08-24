@@ -98,7 +98,7 @@
   {
   "id": "radome",
   "title": "Radome Analysis for Wildfire Response UAVs",
-  "type": "Research Project",
+  "type": "Design Project",
   "date": "2026-03-01",
   "dateDisplay": "March 2026",
   "image": "../../assets/engassets/radome/radome.png",
@@ -204,5 +204,29 @@
     "../../assets/engassets/space trek/IMG_7365.JPG",
     "../../assets/engassets/space trek/5.jpg"
   ]
-  }
+  },
+  {
+  "id": "MONSTER",
+  "title": "Undergraduate Research Assistant",
+  "type": "MONSTER Research Group",
+  "date": "2026-08-24",
+  "dateDisplay": "August 2026 - Present",
+  "image": "../../assets/engassets/logos/dorkus.png",
+  "heroImage": "../../assets/engassets/logos/dorkus.png",
+  "description": "Analyzing open source thermodynamics software \"PyCALPHAD\" for the MONSTER research group.",
+  "overview": "The MONSTER research group focuses on the development and application of inorganic materials science. My research focuses on thermodynamics and phase transformations.",
+  "role": "Research Assistant",
+  "outcome": "Gained experience in thermodynamics, phase transformations, and materials science research.",
+  "tags": ["Research", "Materials Science", "Thermodynamics"],
+  "category": "Research",
+  "highlights": [
+    "Analyzed the potential transition to opensource thermodynamics software \"PyCALPHAD\" for the MONSTER research group.",
+    "Gained experience in thermodynamics, phase transformations, and materials science research.",
+    "Contributed to the development of new materials and processes for various applications."
+  ],
+  "link": { "label": "Research Group Website", "url": "https://monster.mse.ufl.edu/" },
+  "gallery": [
+    "../../assets/engassets/logos/dorkus.png"
+  ]
+}
 ]

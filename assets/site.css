@@ -349,19 +349,24 @@ h1 em, h2 em {
 }
 
 .timeline {
+  overflow-x: auto;
+  padding: 0 0 20px;
+  max-width: 100%;
+}
+
+.timeline-track {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 240px;
   gap: 48px;
-  overflow-x: auto;
-  padding: 0 0 20px;
+  width: max-content;
   position: relative;
 }
 
-.timeline::before {
+.timeline-track::before {
   content: '';
   position: absolute;
-  top: 30px; 
+  top: 30px;
   left: 0;
   right: 0;
   height: 1px;

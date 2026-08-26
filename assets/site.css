@@ -128,6 +128,30 @@ nav a:hover, nav a.active {
   flex-shrink: 0;
 }
 
+.hero-banner-wrap {
+  position: relative;
+  width: 100vw;
+  height: min(500px, 42vw);
+  margin-top: -112px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+.hero-banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-banner-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 90%, var(--canvas) 100%);
+  pointer-events: none;
+}
+
 h1 {
   font-size: clamp(3.4rem, 8vw, 7.5rem);
   max-width: 1000px;

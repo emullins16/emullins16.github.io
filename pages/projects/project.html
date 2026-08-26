@@ -34,7 +34,7 @@
         document.title = `${p.title} — Evan Mullins`;
         container.innerHTML = `
           <a class="back-link" href="projects.html">← All work</a>
-          <section class="case-hero"><p class="eyebrow">${p.type} · ${p.dateDisplay}</p><h1>${p.title}</h1><p>${p.description}</p><div class="tag-list">${p.tags.map(tag => `<span>${tag}</span>`).join('')}</div></section>
+          <section class="case-hero"><p class="eyebrow">${p.type} | ${p.dateDisplay}</p><h1>${p.title}</h1><div class="tag-list">${p.tags.map(tag => `<span>${tag}</span>`).join('')}</div></section>
           <img class="case-hero-image" src="${p.heroImage}" alt="${p.title} project image">
           <section class="case-details"><div><p class="eyebrow">Overview</p><h2>${p.overview}</h2></div><dl><div><dt>My role</dt><dd>${p.role}</dd></div><div><dt>Outcome</dt><dd>${p.outcome}</dd></div><div id="pdf-container"></div></dl></section>
           <section class="case-highlights"><p class="eyebrow">Key notes</p><ol>${p.highlights.map(item => `<li>${item}</li>`).join('')}</ol></section>

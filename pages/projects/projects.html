@@ -21,8 +21,8 @@
   <main class="work-page">
     <section class="page-intro">
       <p class="eyebrow">Selected work</p>
-      <h1><strong>Things I've Built</strong></h1>
-      <p class="intro-copy">A growing collection of projects I have worked on.</p>
+      <h1><strong>Work History</strong></h1>
+      <p class="intro-copy">A growing collection of things I've built.</p>
     </section>
     <section class="timeline-section" aria-label="Career timeline">
       <div class="timeline">
@@ -156,7 +156,7 @@
           <span class="project-number">${String(index + 1).padStart(2, '0')}</span>
           <div class="project-thumbnail"><img src="${project.image}" alt="${project.title}"></div>
           <div class="project-summary">
-            <p class="project-meta">${project.type} · ${project.dateDisplay}</p>
+            <p class="project-meta">${project.type} | ${project.dateDisplay}</p>
             <h2>${project.title}</h2>
             <p>${project.description}</p>
           </div>

@@ -6,7 +6,7 @@
     "date": "2026-02-01",
     "dateDisplay": "February 2026",
     "image": "../../assets/engassets/cup/spill.png",
-    "heroImage": "../../assets/engassets/cup/cup.jpg",
+    "heroImage": "../../assets/engassets/cup/spill.png",
     "description": "A reimagined disposable polymer cup designed to improve usability and sustainability.",
     "overview": "Flux Cup is a redesign exercise focused on improving ergonomics, spill resistance, and material efficiency of disposable polymer cups.",
     "role": "CAD, Rendering, Stacking Stress Analysis",
@@ -14,7 +14,7 @@
     "tags": ["Product design", "CAD", "Prototyping"],
     "category": "Product & Design",
     "highlights": ["Created CAD drawings and realistic renderings using Fusion 360, Blender, and Blender fluid simulation.", "Evaluated stacking stress during design for easy storage."],
-    "gallery": ["../../assets/engassets/cup/still.png", "../../assets/engassets/cup/drawing.png", "../../assets/engassets/cup/spill.png", "../../assets/engassets/cup/1771101446164.png"]
+    "gallery": ["../../assets/engassets/cup/still.png", "../../assets/engassets/cup/drawing.png", "../../assets/engassets/cup/1771101446164.png"]
   },
   {
     "id": "swarm-sense",
